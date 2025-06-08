@@ -34,8 +34,7 @@
 打开终端（Windows 叫“命令提示符” CMD），输入以下命令安装所需的 Python 库：
 
 ```sh
-pip install requests pandas openpyxl playwright
-playwright install
+pip install requests openpyxl
 ```
 
 如果安装成功，你可以输入 `pip list` 来检查它们是否已经安装。
