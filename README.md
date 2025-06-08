@@ -46,7 +46,7 @@ playwright install
 
 在脚本文件夹创建一个 Excel 文件，名称为：wallet.xlsx，文件格式如下：
 
-![](https://raw.githubusercontent.com/0xlin888/discord_message/refs/heads/main/excel.png?raw=true)
+![](https://raw.githubusercontent.com/0xlin888/irys/refs/heads/main/images/xlsx.png?raw=true)
 
 - **第一列**
 - **address**，第一列列名address：IRYS钱包地址
@@ -59,10 +59,11 @@ playwright install
 - **修改faucet.py配置**
 
 找到大概第12行，把动态IP API接口换成你自己的
+![](https://raw.githubusercontent.com/0xlin888/irys/refs/heads/main/images/nst.png?raw=true)
 
 找到大概第40行，把打码Token换成你自己的
 
-![](https://raw.githubusercontent.com/0xlin888/discord_message/refs/heads/main/run.png?raw=true)
+![](https://raw.githubusercontent.com/0xlin888/irys/refs/heads/main/images/no.png?raw=true)
 
 ---
 
