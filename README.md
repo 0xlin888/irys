@@ -11,7 +11,6 @@
 ### ✅ 基础要求
 - 一台可以运行 Python 的电脑（Windows / Mac / Linux 都可以）
 - 安装 Python（建议使用 Python 3.8 及以上）
-- 使用Morelogin指纹浏览器或AdsPower指纹浏览器
 
 ### ✅ 安装 Python
 如果你的电脑没有 Python，可以按照下面的方式安装：
