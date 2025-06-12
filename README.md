@@ -54,6 +54,8 @@ pip install requests openpyxl
 
 ## 📜 5. 运行脚本
 
+- **5.1 付费打码**
+
 - **修改faucet.py配置**
 
 找到大概第12行，把动态IP API接口换成你自己的
@@ -62,6 +64,11 @@ pip install requests openpyxl
 找到大概第40行，把打码Token换成你自己的
 
 ![](https://raw.githubusercontent.com/0xlin888/irys/refs/heads/main/images/no.png?raw=true)
+
+- **5.2 免费打码**
+- **也可以本地搭建打码cf-clearance-scraper服务器节省成本**
+- 教程参考：https://github.com/0xsongsu/cf-clearance-scraper/
+- 使用cf-clearance-scraper用脚本**irys_faucet_cf-clearance-scraper.py**
 
 ---
 
