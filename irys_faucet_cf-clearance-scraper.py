@@ -22,16 +22,22 @@ def get_proxy():
         proxies = resp.json()
         if isinstance(proxies, list) and proxies:
             proxy = proxies[0]
-            # 解析代理 URL
+            # 构建代理URL（用于requests请求）
             proxy_url = f"http://{proxy['username']}:{proxy['password']}@{proxy['ip']}:{proxy['port']}"
-            proxy_info = {
-                "host": proxy["ip"],
-                "port": int(proxy["port"]),  # 确保 port 是整数类型
-                "username": proxy["username"],
-                "password": proxy["password"]
-            }
             print(f"[Proxy] 获取到代理: {proxy_url}")
-            return proxy_info
+            # 返回两种格式的代理信息
+            return {
+                # 用于 get_cf_turnstile 提交给后端的格式
+                "proxy_info": {
+                    "host": proxy["ip"],
+                    "port": int(proxy["port"]),
+                    "username": proxy["username"],
+                    "password": proxy["password"]
+                },
+                # 用于 requests 请求的格式
+                "http": proxy_url,
+                "https": proxy_url
+            }
         else:
             print(f"[Proxy] 接口返回格式异常: {proxies}")
     except requests.RequestException as e:
@@ -50,13 +56,8 @@ def get_cf_turnstile(proxy: dict = None):
     }
     
     # 如果有代理配置，添加到请求数据中
-    if proxy and all(key in proxy for key in ["host", "port", "username", "password"]):
-        json_data['proxy'] = {
-            "host": proxy["host"],
-            "port": proxy["port"],
-            "username": proxy["username"],
-            "password": proxy["password"]
-        }
+    if proxy and "proxy_info" in proxy:
+        json_data['proxy'] = proxy["proxy_info"]
 
     try:
         response = requests.post(
